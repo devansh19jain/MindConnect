@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BlogCard from './BlogCard';
 import { Link } from 'react-router-dom';
 // import Navbar from '../Navbar/Navbar';
-
+//this is my comment
 // const BLOG_API_URL = process.env.BLOG_URL;
 
 function Blogs({limit}) {
