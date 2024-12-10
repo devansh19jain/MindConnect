@@ -34,7 +34,8 @@ const Chat = (docChatId) => {
       setdocId( auth.id)
     }
     // Connect to the WebSocket server
-    socketRef.current = io("http://localhost:8080");
+    // socketRef.current = io("https://mindconnect-2ao9.onrender.com");
+    socketRef.current = io("https://localhost:8080");
     
     console.log(docChatId)
     
