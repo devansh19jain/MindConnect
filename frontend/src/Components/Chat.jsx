@@ -34,10 +34,9 @@ const Chat = (docChatId) => {
       setdocId( auth.id)
     }
     // Connect to the WebSocket server
-    // socketRef.current = io("https://mindconnect-2ao9.onrender.com");
-    socketRef.current = io("https://localhost:8080");
+    socketRef.current = io("http://localhost:8080");
     
-    console.log(docChatId)
+    
     
     // Join the specific chat session room
     socketRef.current.emit('joinSession', id,
@@ -61,7 +60,6 @@ const Chat = (docChatId) => {
 
     // Cleanup the socket connection on component unmount
     return () => {
-      console.log(typeof sessionId)
       socketRef.current.emit('saveMessage', auth.id);
       socketRef.current.disconnect();
     };
@@ -125,10 +123,10 @@ const Chat = (docChatId) => {
             ) : (
               messages.map((message, index) => (
                 <div key={index}
-                        className={`mb-4 flex ${message.senderId === auth.id ? 'justify-end' : 'justify-start'}`}>
+                        className={`mb-4 flex ${message.senderId == auth.id ? 'justify-end' : 'justify-start'}`}>
 
 
-                  <div className={`${message.senderId === auth.id ? 'bg-customYellow text-black' : 'bg-customBlue text-white'} rounded-lg p-3 max-w-xs`} style={{ wordBreak: 'break-word' }}>
+                  <div className={`${message.senderId == auth.id ? 'bg-customYellow text-black' : 'bg-customBlue text-white'} rounded-lg p-3 max-w-xs`} style={{ wordBreak: 'break-word' }}>
                     <p>{message.content}</p>  {/* Changed to 'content' */}
                     <span className="text-xs text-gray-500">{message.time}</span>
                   </div>

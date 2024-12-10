@@ -110,7 +110,7 @@ const generateIcon = () => {
               <div
                 key={chat.sessionId.toString()}
                 className={`border border-customBlue p-4 rounded-3xl cursor-pointer hover:bg-blue-200 relative dropdown
-                  ${selectedChat === chat  ? 'bg-customYellow hover:bg-yellow-300' : 'bg-blue-100'}`}
+                  ${selectedChat == chat  ? 'bg-customYellow hover:bg-yellow-300' : 'bg-blue-100'}`}
                 onClick={() => setSelectedChat(chat)}
               >
                 <div className="flex justify-between items-center">

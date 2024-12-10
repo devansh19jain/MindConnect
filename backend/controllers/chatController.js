@@ -6,7 +6,7 @@ const getAllChats = async (req, res) => {
     try{
         const chats = await Session.find();
         res.status(201).json(chats)
-        
+
     }
     catch(err){
         console.log(err)
